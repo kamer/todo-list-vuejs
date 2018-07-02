@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <!-- VueJS-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <!-- FA -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+
+    <style>
+        #text-input {
+            border: none;
+            width: 95%;
+        }
+        
+        
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="card" style="width: 36rem; margin: 0 auto">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" v-for="(todo, index) in todos">{{todo}} <span style="float: right;"> <a href="#" v-on:click="deleteTodo(index)" style="color: red"><i class="fas fa-times"></i></a></span> </li>
+                <li class="list-group-item" id="list-item"> <input type="text" id="text-input" v-model="newTodo" placeholder="Add new todo..."> <a href="#" v-on:click="addTodo"> <i class="fas fa-plus"></i> </a> </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
